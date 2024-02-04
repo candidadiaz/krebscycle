@@ -1,10 +1,6 @@
-#fisio
-
 rm(list=ls())
 
-
 library(readxl)
-
 
 ###########################Regresion models##############################
 
