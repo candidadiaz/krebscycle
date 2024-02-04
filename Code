@@ -11,7 +11,7 @@ library(dplyr)
 
 #Succinate
 
-succinate<- read_excel("data/intermediates.xlsx", 
+succinate<- read_excel("data/Data.xlsx", 
                   sheet = "Succinate")
 
 
@@ -44,7 +44,7 @@ ggsave(plot = succinatePlot,        # Plot object to save
 
 #lactate
 
-lactate<- read_excel("data/intermediates.xlsx", 
+lactate<- read_excel("data/Data.xlsx", 
                        sheet = "Lactate")
 
 
@@ -77,7 +77,7 @@ ggsave(plot = lactatePlot,        # Plot object to save
 
 #lactate pyruvate
 
-lactateP<- read_excel("data/intermediates.xlsx", 
+lactateP<- read_excel("data/Data.xlsx", 
                      sheet = "LactateP")
 
 
@@ -115,7 +115,7 @@ ggsave(plot = lactatepPlot,        # Plot object to save
 #citrate
 
 
-citrate<- read_excel("data/intermediates.xlsx", 
+citrate<- read_excel("data/Data.xlsx", 
                       sheet = "Citrate")
 
 
@@ -150,7 +150,7 @@ ggsave(plot = citratePlot,        # Plot object to save
 
 #piruvate
 
-pyruvate<- read_excel("data/intermediates.xlsx", 
+pyruvate<- read_excel("data/Data.xlsx", 
                      sheet = "Pyruvate")
 
 
@@ -186,7 +186,7 @@ ggsave(plot = pyruvatePlot,        # Plot object to save
 
 #malate
 
-malate<- read_excel("data/intermediates.xlsx", 
+malate<- read_excel("data/Data.xlsx", 
                       sheet = "Malate")
 
 
@@ -222,7 +222,7 @@ ggsave(plot = malatePlot,        # Plot object to save
 
 #fumarate
 
-fumarate<- read_excel("data/intermediates.xlsx", 
+fumarate<- read_excel("data/Data.xlsx", 
                       sheet = "Fumarate")
 
 
@@ -257,7 +257,7 @@ ggsave(plot = fumaratePlot,        # Plot object to save
 
 #ketoglutarate
 
-ketoglutarate<- read_excel("data/intermediates.xlsx", 
+ketoglutarate<- read_excel("data/Data.xlsx", 
                       sheet = "Ketoglutarate")
 
 
@@ -307,7 +307,7 @@ ggsave(plot = figure2,        # Plot object to save
 
 ##############Difference of medians################
 
-pyruvate<- read_excel("data/median.xlsx", 
+pyruvate<- read_excel("data/Data2.xlsx", 
                       sheet = "Pyruvate")
 
 
@@ -320,7 +320,7 @@ wilcox.test(pyruvate$endotoxin6,pyruvate$control6, exact = F,correct = T,conf.in
 
 
 
-lactate<- read_excel("data/median.xlsx", 
+lactate<- read_excel("data/Data2.xlsx", 
                       sheet = "Lactate")
 
 
@@ -344,7 +344,7 @@ wilcox.test(succinate$endotoxin3,succinate$control3, exact = F,correct = T,conf.
 wilcox.test(succinate$endotoxin6,succinate$control6, exact = F,correct = T,conf.int = F, alternative = "two.sided", paired=F)
 
 
-LP<- read_excel("data/median.xlsx", 
+LP<- read_excel("data/Data2.xlsx", 
                        sheet = "LP")
 
 
@@ -370,7 +370,7 @@ wilcox.test(citrate$endotoxin3,citrate$control3, exact = F,correct = T,conf.int 
 wilcox.test(citrate$endotoxin6,citrate$control6, exact = F,correct = T,conf.int = F, alternative = "two.sided", paired=F)
 
 
-succinato<- read_excel("data/median.xlsx", 
+succinato<- read_excel("data/Data2.xlsx", 
                 sheet = "Succinate")
 
 wilcox.test(succinate$control3, succinate$control6, exact = F,correct = T,conf.int = F, alternative = "two.sided", paired=T)
@@ -385,7 +385,7 @@ wilcox.test(succinate$endotoxin0, succinate$endotoxin6, exact = F,correct = T,co
 
 #Lactate and Succinate
 
-LASU<- read_excel("data/regresion.xlsx", 
+LASU<- read_excel("data/Data3.xlsx", 
                     sheet = "LASU")
 
 #deltas
@@ -409,7 +409,7 @@ summary(model2)
 #Citrate and Lactate pyruvate
 
 
-CILP <- read_excel("data/regresion.xlsx", 
+CILP <- read_excel("data/Data3.xlsx", 
                     sheet = "CILP")
 
 model3<-lm(Citrate~LactatePiruvate,CILP)
@@ -420,7 +420,7 @@ summary(model3)
 #Citrate and lactate
 
 
-CILA <- read_excel("data/regresion.xlsx", 
+CILA <- read_excel("data/Data3.xlsx", 
                    sheet = "CILA")
 
 model4<-lm(Citrate~Lactate, CILA)
